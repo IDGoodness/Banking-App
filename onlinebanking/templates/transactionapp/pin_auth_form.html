@@ -1,0 +1,51 @@
+{% extends 'main_page.html' %}
+{% block title%} Creation {% endblock title%}
+
+{% block body_content %}
+<p>
+    <span class="date text-pink text-size-30px mt-5">
+        {% if messages %}
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+        {% endif %}
+    </span>
+</p>
+<div class="cont" style="margin-top: 100px; margin-left: 100px;">
+    <div class="row">
+       
+        {% csrf_token %}   
+        {% load bootstrap %}
+        <div style="background-color: white; width: 500px;padding: 50px;" class="ml-5">
+            <form action="" method="post">
+              <div class="form-group">
+                
+              </div>
+              <div class="form-group">
+                {{pin_form.pin}}
+                
+              </div>
+              <div class="mb-4 text-center">
+                  <input style="padding: 10px 40px; background-color: rgb(17, 43, 83); color: white;" class="sim-btn loginbutton" value="Login" type="submit">
+              </div>
+              <div class="text-center">
+                  <p>Don't have an account? <a href="#">Sign Up</a></p>
+              </div>
+            </form>
+          </div>
+    </div>
+</div>
+{% endblock body_content %}
+
+
+<!-- 
+<div class="way col-md-6 col-lg-6 col-xxl-6 col-sm-12 col-xm-12">
+    <form action="" method="post" class="mt-4" enctype="multipart/form-data">
+        
+        {{pin_form|bootstrap}}
+        <div class="d-flex justify-content-center">
+            <input type="submit" value="Submit" class="btn bg-white bc-white mt-2 ml-2 loginbutton">
+        </div>
+    </form>
+</div> -->
+<!-- {{pin_form.your_account}} -->
